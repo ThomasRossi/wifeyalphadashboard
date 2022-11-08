@@ -1,0 +1,37 @@
+#ECONOMY
+economy
+
+#Deflator
+fred GDPDEF NAGIGP01EZQ661S -s 2015-01-01 --export deflator.jpg
+#should rebase GDPDEF to 2015
+
+#Gold
+futures -c metals
+#couldn't find a way to export only gold
+
+#Misery/confidence and CPI
+macro -p CONF -c United_States -s 2019-01-01 --export condifence.csv
+macro -p CPI -c United_States -s 2019-01-01  --export cpi.csv
+
+#PPI
+macro -p PPI -c United_States -s 2019-01-01  --export ppi.csv
+
+#SPREAD
+fred BAMLH0A0HYM2 BAMLC0A0CM -s 2019-01-01  --export spread.jpg
+
+#Ex-TED Spread
+fred DTB3 SOFR -s 2019-01-01 --export extedspread.jpg
+
+#VIX
+index vix  -s 2019-01-01 --export vix.jpg
+
+#RETAIL PROXY
+#/stocks/load AMC 
+#candle  -s 2019-01-01 --export jpg
+#ba
+#reddit_sent --export jpg
+
+#ZOMBIE BANK PROXY
+#maybe there is a specific ratio to pin point?
+#/stocks/load BAC
+#/fa/ratios 
